@@ -6,7 +6,7 @@
 /*   By: mlehmann <mlehmann@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/03 13:39:27 by mlehmann          #+#    #+#             */
-/*   Updated: 2026/07/10 15:18:00 by mlehmann         ###   ########.fr       */
+/*   Updated: 2026/07/14 14:04:59 by mlehmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,17 +59,30 @@ void	PhoneBook::searchContacts()
 	while (index < contacts)
 	{
 		data[0] = to_string(index);
-		data[1] = getFirstName(this->bookContent[index]);
-		data[2] = getLastName(this->bookContent[index]);
-		data[3] = getNickName(this->bookContent[index]);
+		data[1] = this->bookContent[index].getFirstName();
+		data[2] = this->bookContent[index].getLastName();
+		data[3] = this->bookContent[index].getNickName();
 		for(i = 1; i < 4; ++i)
 		{
-			if (data[i].length > 0)
+			if (data[i].length > 9)
 				data[i] = data[i].substr(0, 9) + ".";
 		}
-		for (j = 1; j < 4; ++j)
-			std::cout << setw
-
+		for (j = 0; j < 3; ++j)
+			std::cout << setw(10) << data[j] << "|";
+		std::cout << setw(10) << data[3] << std::endl;
 		index++;
+	}
+	std::cout << "insert the index of the contact you are interested in" << std::endl;
+	std::cin >> index;
+	if (index >= 0 && index < 8)
+	{
+		std::cout << this->bookContent[index].getFirstName() << std::endl;
+		std::cout << this->bookContent[index].getLastName() << std::endl;
+		std::cout << this->bookContent[index].getNickName() << std::endl;
+		std::cout << this->bookContent[index].getDarkestSecret() << std::endl;
+	}
+	else
+	{
+		std::cout << "unexpected input" << std::endl;
 	}
 }
