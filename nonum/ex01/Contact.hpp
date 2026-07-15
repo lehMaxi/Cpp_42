@@ -6,7 +6,7 @@
 /*   By: mlehmann <mlehmann@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 10:44:23 by mlehmann          #+#    #+#             */
-/*   Updated: 2026/07/03 13:39:38 by mlehmann         ###   ########.fr       */
+/*   Updated: 2026/07/15 10:19:57 by mlehmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class	Contact
 	public:
 		Contact();
 		~Contact();
-		setContact
+		void setContact
 		(
 			str	first,
 			str	last,

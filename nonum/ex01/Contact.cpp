@@ -6,7 +6,7 @@
 /*   By: mlehmann <mlehmann@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/03 12:25:24 by mlehmann          #+#    #+#             */
-/*   Updated: 2026/07/10 13:52:06 by mlehmann         ###   ########.fr       */
+/*   Updated: 2026/07/15 12:50:14 by mlehmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 Contact::Contact()
 {
-	std:cout << "New Contact" << std::endl;
+//	std::cout << "New Contact" << std::endl;
 }
 
 Contact::~Contact()
 {
-	std:cout << "Contact gone" << std::endl;
+//	std::cout << "Contact gone" << std::endl;
 }
 
-Contact::setContact(str first, str last, str nick, str phone, str dark)
+void	Contact::setContact(str first, str last, str nick, str phone, str dark)
 {
 	this->firstName = first;
 	this->lastName = last;
@@ -46,7 +46,7 @@ str	Contact::getNickName() const
 	return (this->nickName);
 }
 
-str	Contact::getPhoneName() const
+str	Contact::getPhoneNumber() const
 {
 	return (this->phoneNumber);
 }

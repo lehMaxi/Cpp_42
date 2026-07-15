@@ -6,7 +6,7 @@
 /*   By: mlehmann <mlehmann@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 14:32:34 by mlehmann          #+#    #+#             */
-/*   Updated: 2026/07/03 12:24:49 by mlehmann         ###   ########.fr       */
+/*   Updated: 2026/07/15 12:40:34 by mlehmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,6 @@
 #include <iomanip>
 #include <cstdio>
 
-typedef	std::sting str;
-
-#include "Contact.hpp"
-#include "PhoneBook.hpp"
+typedef	std::string str;
 
 #endif

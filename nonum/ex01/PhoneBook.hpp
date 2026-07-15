@@ -6,14 +6,14 @@
 /*   By: mlehmann <mlehmann@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/01 13:11:58 by mlehmann          #+#    #+#             */
-/*   Updated: 2026/07/03 12:27:48 by mlehmann         ###   ########.fr       */
+/*   Updated: 2026/07/15 12:41:21 by mlehmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_H
 #define PHONEBOOK_H
 
-#include "libraries.hpp"
+#include "Contact.hpp"
 
 class PhoneBook
 {
@@ -29,3 +29,5 @@ class PhoneBook
 		int			contactCount;
 		Contact		bookContent[8];
 };
+
+#endif
