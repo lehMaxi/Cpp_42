@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap(str name) : name(name), hitPoints(10), energyPoints(10), attackDamage(10)
 {
-    std::cout << this->name << "arrived at the scene!" << std::endl;
+    std::cout << "The ClapTrap " << this->name << " arrived at the scene!" << std::endl;
     std::cout << "Ready to take" << this->hitPoints << "points of damage and spend " << this->energyPoints << "points of energy" << std::endl;
 }
 
@@ -10,6 +10,11 @@ ClapTrap::ClapTrap(ClapTrap const &src)
 {
     std::cout << src.name << "gets copied!" << std::endl;
     *this = src;
+}
+
+ClapTrap::ClapTrap()
+{
+    std::cout << "A new Clap Trap arose." << std::endl;
 }
 
 ClapTrap::~ClapTrap()
@@ -28,6 +33,46 @@ ClapTrap& ClapTrap::operator=(ClapTrap const &other)
         this->attackDamage = other.attackDamage;
     }
     return *this;
+}
+
+str     ClapTrap::getName() const
+{
+    return (this->name);
+}
+
+int     ClapTrap::getHitPoints() const
+{
+    return (this->hitPoints);
+}
+
+int     ClapTrap::getEnergyPoints() const
+{
+    return (this->energyPoints);
+}
+
+int     ClapTrap::getAttackDamage() const
+{
+    return (this->attackDamage);
+}
+
+void    ClapTrap::setName(str newName)
+{
+    this->name = newName;
+}
+
+void    ClapTrap::setHitPoints(int newAmount)
+{
+    this->hitPoints = newAmount;
+}
+
+void    ClapTrap::setEnergyPoints(int newAmount)
+{
+    this->energyPoints = newAmount;
+}
+
+void    ClapTrap::setAttackDamage(int newAmount)
+{
+    this->attackDamage = newAmount;
 }
 
 void    ClapTrap::attack(const str &target)
