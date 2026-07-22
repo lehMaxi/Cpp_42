@@ -6,7 +6,7 @@
 /*   By: mlehmann <mlehmann@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 14:14:09 by mlehmann          #+#    #+#             */
-/*   Updated: 2026/07/15 12:54:42 by mlehmann         ###   ########.fr       */
+/*   Updated: 2026/07/22 12:18:16 by mlehmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ int	main()
 			std::cout << "Bye bye beautiful!" << std::endl;
 			break;
 		}
-		system("clear");
+		else
+			std::cout << "please type as asked, I'm not that awesome q.q" << std::endl;
 	}
 	sleep(1);
 	return 0;

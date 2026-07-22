@@ -6,7 +6,7 @@
 /*   By: mlehmann <mlehmann@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/03 13:39:27 by mlehmann          #+#    #+#             */
-/*   Updated: 2026/07/15 12:50:01 by mlehmann         ###   ########.fr       */
+/*   Updated: 2026/07/22 12:24:48 by mlehmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,5 @@ void	PhoneBook::searchContacts()
 	{
 		std::cout << "unexpected input" << std::endl;
 	}
+	std::cin.clear();
 }
