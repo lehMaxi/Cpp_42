@@ -1,8 +1,8 @@
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon &weapon) : name(name), weapon(&weapon)
+HumanA::HumanA(std::string name, Weapon &weapon) : name(name), weapon(weapon)
 {
-    std::cout << this->name << " has entered the fray with their " << this->weapon->getType() << "drawn and ready!"<< std::endl;
+    std::cout << this->name << " has entered the fray with their " << this->weapon.getType() << "drawn and ready!"<< std::endl;
 }
 
 HumanA::~HumanA()
@@ -12,5 +12,5 @@ HumanA::~HumanA()
 
 void HumanA::attack(void) const
 {
-    std::cout << this->name << " attacks with their " << this->weapon->getType() << "commiting unneccessary violence!" << std::endl;
+    std::cout << this->name << " attacks with their " << this->weapon.getType() << "commiting unneccessary violence!" << std::endl;
 }

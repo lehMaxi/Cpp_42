@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include "Weapon.hpp"
 
 class HumanB
 {
@@ -13,6 +14,6 @@ class HumanB
     void attack(void) const;
     private:
     std::string name;
-    Weapon &weapon;
+    Weapon *weapon;
 };
 #endif

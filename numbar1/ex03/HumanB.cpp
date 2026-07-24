@@ -12,14 +12,14 @@ HumanB::~HumanB()
 
 void HumanB::setWeapon(Weapon &weapon)
 {
-    this->weapon = weapon;
-    std::cout << this->weapon.getType() << " appeared in " << this->name << "'s hands!" << std::endl;
+    this->weapon = &weapon;
+    std::cout << this->weapon->getType() << " appeared in " << this->name << "'s hands!" << std::endl;
 }
 
 void HumanB::attack(void) const
 {
-    if (this->weapon.getType().empty())
+    if (this->weapon->getType().empty())
         std::cout << this->name << " reaches out with their bare hands!" << std::endl;
     else
-        std::cout << this->name << " attacks with their " << this->weapon.getType() << "pushing unneccessary violence!" << std::endl;
+        std::cout << this->name << " attacks with their " << this->weapon->getType() << " pushing unneccessary violence!" << std::endl;
 }

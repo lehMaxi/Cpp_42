@@ -6,7 +6,7 @@
 /*   By: mlehmann <mlehmann@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 14:14:09 by mlehmann          #+#    #+#             */
-/*   Updated: 2026/07/22 12:18:16 by mlehmann         ###   ########.fr       */
+/*   Updated: 2026/07/24 12:02:30 by mlehmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main()
 		}
 		else
 			std::cout << "please type as asked, I'm not that awesome q.q" << std::endl;
+		sleep(1);
 	}
-	sleep(1);
 	return 0;
 }

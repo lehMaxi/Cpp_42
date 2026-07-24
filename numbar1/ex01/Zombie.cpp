@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlehmann <mlehmann@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/07/24 13:34:20 by mlehmann          #+#    #+#             */
+/*   Updated: 2026/07/24 15:08:22 by mlehmann         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Zombie.hpp"
 
 Zombie::Zombie()
@@ -7,10 +19,15 @@ Zombie::Zombie()
 
 Zombie::~Zombie()
 {
-    std::cout << name << " stumbled, fell and got destroyed 'humanely'." << std::endl;
+    std::cout << ownName << " stumbled, fell and got destroyed 'humanely'." << std::endl;
+}
+
+void Zombie::setName(std::string name)
+{
+	this->ownName = name;
 }
 
 void Zombie::announce(void)
 {
-    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << ownName << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

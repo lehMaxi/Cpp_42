@@ -6,7 +6,7 @@
 /*   By: mlehmann <mlehmann@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/03 13:39:27 by mlehmann          #+#    #+#             */
-/*   Updated: 2026/07/22 12:24:48 by mlehmann         ###   ########.fr       */
+/*   Updated: 2026/07/24 14:16:44 by mlehmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,32 @@ void	PhoneBook::addContact()
 	if (this->currentContact > 7)
 		this->currentContact = 0;
 	if (this->contactCount > 8)
-		std::cout << "Book full, overwriting" << this->bookContent[this->currentContact].getFirstName() << std::endl;
-	std::cout << "Input first name please:" << std::endl;
-	getline(std::cin, input[0]);
-	std::cout << "Input last name please:" << std::endl;
-	getline(std::cin, input[1]);
-	std::cout << "Input nick name please:" << std::endl;
-	getline(std::cin, input[2]);
-	std::cout << "Input phone number please:" << std::endl;
-	getline(std::cin, input[3]);
-	std::cout << "Input their darkes secret if you dare:" << std::endl;
-	getline(std::cin, input[4]);
+		std::cout << "Book full, overwriting " << this->bookContent[this->currentContact].getFirstName() << std::endl;
+	while (input[0].empty())
+	{
+		std::cout << "Input first name please:" << std::endl;
+		getline(std::cin, input[0]);
+	}
+	while (input[1].empty())
+	{
+		std::cout << "Input last name please:" << std::endl;
+		getline(std::cin, input[1]);
+	}
+	while (input[2].empty())
+	{
+		std::cout << "Input nick name please:" << std::endl;
+		getline(std::cin, input[2]);
+	}
+	while (input[3].empty())
+	{
+		std::cout << "Input phone number please:" << std::endl;
+		getline(std::cin, input[3]);
+	}
+	while (input[4].empty())
+	{
+		std::cout << "Input their darkes secret if you dare:" << std::endl;
+		getline(std::cin, input[4]);
+	}
 	this->bookContent[this->currentContact].setContact(input[0], input[1], input[2], input[3],input[4]);
 	this->currentContact++;
 	this->contactCount++;
@@ -52,13 +67,18 @@ void	PhoneBook::searchContacts()
 	str	data[4];
 
 	std::cout << "|searching input:...                     |" << std::endl;
+	if (contacts == 0)
+	{
+		std::cout << "|--------no contacts are available-------|" << std::endl;
+		return;
+	}
 	std::cout << "|----following contacts are available----|" << std::endl;
 	std::cout << "|-index-|first name|last  name|nick  name|" << std::endl;
 	if (contacts > 7)
 		contacts = 8;
 	while (index < contacts)
 	{
-		std::cout << "|" << std::setw(7) << index << "|";
+		std::cout << "|" << std::setw(7) << index + 1 << "|";
 		data[1] = this->bookContent[index].getFirstName();
 		data[2] = this->bookContent[index].getLastName();
 		data[3] = this->bookContent[index].getNickName();
@@ -74,16 +94,19 @@ void	PhoneBook::searchContacts()
 	}
 	std::cout << "insert the index of the contact you are interested in" << std::endl;
 	std::cin >> index;
-	if (index >= 0 && index < 8)
+	std::cin.clear();
+	index--;
+	if (index >= 0 && index < contacts)
 	{
 		std::cout << this->bookContent[index].getFirstName() << std::endl;
 		std::cout << this->bookContent[index].getLastName() << std::endl;
 		std::cout << this->bookContent[index].getNickName() << std::endl;
+		std::cout << this->bookContent[index].getPhoneNumber() << std::endl;
 		std::cout << this->bookContent[index].getDarkestSecret() << std::endl;
 	}
 	else
 	{
 		std::cout << "unexpected input" << std::endl;
 	}
-	std::cin.clear();
+	std::cin.ignore(1000, '\n');
 }
