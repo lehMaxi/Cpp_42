@@ -14,18 +14,18 @@ std::cout << "A freshly baked puppy" << std::endl;
 
 Dog::~Dog()
 {
-std::cout << "Did.." << std::endl;
+std::cout << "I wanted to put it down to the ground..." << std::endl;
 }
 
-Cat Cat:: operator=(Cat &template)
+Dog Dog:: operator=(Dog &template)
 {
 if (*this != template)
-std::cout << "Looks just like her mommy." << std::endl;
+std::cout << "Looks just like its mother." << std::endl;
 this->setType(template.getType());
 return this;
 }
 
-void Cat::makeSound()
+void Dog::makeSound()
 {
-std::cout << "Cat: I guess mewmewmew would be appropriate, yes?" << std::endl;
+std::cout << "Dog: Raf raf raf, this shoo looks like an appropriate dinner, yes?" << std::endl;
 }
