@@ -9,7 +9,7 @@ Dog::Dog()
 Dog::Dog(Dog const &src)
 {
 std::cout << "A freshly baked puppy" << std::endl;
-    _type = src._type;
+*this = src;
 }
 
 Dog::~Dog()
@@ -27,5 +27,5 @@ return this;
 
 void Dog::makeSound()
 {
-std::cout << "Arf arf arf, this shoo looks like an appropriate dinner, yes?" << std::endl;
+std::cout << "Dog: Raf raf raf, this shoo looks like an appropriate dinner, yes?" << std::endl;
 }
