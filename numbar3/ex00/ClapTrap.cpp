@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(str name) : name(name), hitPoints(10), energyPoints(10), attackDamage(10)
+ClapTrap::ClapTrap(str name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
     std::cout << this->name << "arrived at the scene!" << std::endl;
     std::cout << "Ready to take" << this->hitPoints << "points of damage and spend " << this->energyPoints << "points of energy" << std::endl;
