@@ -3,10 +3,11 @@
 int main()
 {
     ClapTrap clap("Clappy");
-    clap.attack("a random target");
+
+    clap.attack("Scavy");
     clap.takeDamage(5);
-    clap.beRepaired(3);
-    clap.takeDamage(10);
-    clap.attack("another random target");
+    clap.beRepaired(10);
+    clap.takeDamage(20);
+    clap.attack("Scavy");
     return 0;
 }

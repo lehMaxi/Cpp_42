@@ -3,12 +3,12 @@
 ClapTrap::ClapTrap(str name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
     std::cout << "The ClapTrap " << this->name << " arrived at the scene!" << std::endl;
-    std::cout << "Ready to take" << this->hitPoints << "points of damage and spend " << this->energyPoints << "points of energy" << std::endl;
+    std::cout << "Ready to take " << this->hitPoints << " points of damage and spend " << this->energyPoints << " points of energy" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &src)
 {
-    std::cout << src.name << "gets copied!" << std::endl;
+    std::cout << src.name << " gets copied!" << std::endl;
     *this = src;
 }
 
@@ -19,14 +19,14 @@ ClapTrap::ClapTrap()
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << this->name << "broke down and was destroyed" << std::endl;
+    std::cout << this->name << " broke down and was destroyed" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(ClapTrap const &other)
 {
     if (this != &other)
     {
-        std::cout << other.name << "gets copied and reasigned!" << std::endl;
+        std::cout << other.name << " gets copied and reassigned!" << std::endl;
         this->name = other.name;
         this->hitPoints = other.hitPoints;
         this->energyPoints = other.energyPoints;
@@ -79,7 +79,7 @@ void    ClapTrap::attack(const str &target)
 {
     if (this->hitPoints <= 0 || this->energyPoints <= 0)
     {
-        std::cout << this->name << "twitches but can't act." << std::endl;
+        std::cout << this->name << " twitches but can't act." << std::endl;
         return;
     }
     std::cout << this->name << " initiates attack protocols against " << target << "." << std::endl;
@@ -87,7 +87,7 @@ void    ClapTrap::attack(const str &target)
     this->energyPoints--;
 }
 
-void    ClapTrap::takeDamage(uint32_t amount)
+void    ClapTrap::takeDamage(unsigned int amount)
 {
     this->hitPoints -= amount;
     std::cout << this->name << " takes " << amount << " points of damage";
@@ -97,11 +97,11 @@ void    ClapTrap::takeDamage(uint32_t amount)
         std::cout << ", leaving it with " << this->hitPoints << " hitpoints." << std::endl;
 }
 
-void    ClapTrap::beRepaired(uint32_t amount)
+void    ClapTrap::beRepaired(unsigned int amount)
 {
-    if (this->energyPoints <= 0)
+    if (this->hitPoints <= 0 || this->energyPoints <= 0)
     {
-        std::cout << this->name << "twitches but can't act." << std::endl;
+        std::cout << this->name << " twitches but can't act." << std::endl;
         return;
     }
     this->hitPoints += amount;

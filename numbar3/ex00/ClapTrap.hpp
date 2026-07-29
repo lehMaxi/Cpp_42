@@ -16,8 +16,8 @@ class ClapTrap
         ClapTrap &operator=(ClapTrap const &other);
 
         void    attack(const str &target);
-        void    takeDamage(uint32_t amount);
-        void    beRepaired(uint32_t amount);
+        void    takeDamage(unsigned int amount);
+        void    beRepaired(unsigned int amount);
 
     private:
         str name;
