@@ -1,4 +1,4 @@
-#include "WrongCat.hpp"
+#include "..\includes\WrongCat.hpp"
 
 WrongCat:: WrongCat() : _type("Cat")
 {
@@ -16,12 +16,12 @@ WrongCat::~WrongCat()
     std::cout << "Rejoice, the catlike creature is finally gone!" << std::endl;
 }
 
-WrongCat& WrongCat::operator=(WrongCat const &template)
+WrongCat& WrongCat::operator=(WrongCat const &src)
 {
-    if (this != &template)
+    if (this != &src)
     {
         std::cout << "There... ...are MORE of these cats?!" << std::endl;
-        this->setType(template.getType());
+        this->setType(src._type);
     }
     return *this;
 }

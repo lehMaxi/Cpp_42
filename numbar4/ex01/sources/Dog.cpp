@@ -1,4 +1,4 @@
-#include "Dog.hpp"
+#include "../includes/Dog.hpp"
 
 Dog::Dog()
 {
@@ -21,22 +21,24 @@ std::cout << "I wanted to put it down to the ground..." << std::endl;
     delete _brain;
 }
 
-Dog Dog:: operator=(Dog &template)
+Dog& Dog::operator=(Dog const &src)
 {
-    if (*this != template)
+    if (this != &src)
     {
         std::cout << "Looks just like its mother." << std::endl;
-        this->setType(template.getType());
+        this->setType(src._type);
+        delete _brain;
+        _brain = new Brain(*src._brain);
     }
     return *this;
 }
 
-void Dog::makeSound()
+void Dog::makeSound() const
 {
 std::cout << "Arf arf arf, this shoo looks like an appropriate dinner, yes?" << std::endl;
 }
 
 const Brain& Dog::getBrain() const
 {
-    return *_brain;
+    return *this->_brain;
 }

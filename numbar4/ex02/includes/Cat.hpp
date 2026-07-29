@@ -3,6 +3,7 @@
 
 #include "Animal.hpp"
 
+
 class Cat : public Animal
 {
     public:
@@ -10,11 +11,13 @@ class Cat : public Animal
         Cat(Cat const &src);
         ~Cat();
 
-        Cat &   operator=(Cat const &template)
+        Cat &   operator=(Cat const &src);
 
         void    makeSound() const;
+        const Brain& getBrain() const;
     private:
-        str _type;
+        Brain   *_brain;
+        str     _type;
 };
 
 #endif

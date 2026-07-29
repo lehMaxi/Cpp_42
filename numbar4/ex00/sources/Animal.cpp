@@ -1,4 +1,4 @@
-#include "Animals.hpp"
+#include "..\includes\Animal.hpp"
 
 Animal::Animal(str newType) : _type(newType)
 {
@@ -21,12 +21,12 @@ Animal::~Animal()
     std::cout << "An animal got deconstructed... ...smells like BBQ" << std::endl;
 }
 
-Animal& Animal::operator=(Animal const &template)
+Animal& Animal::operator=(Animal const &src)
 {
-    if (this != &template)
+    if (this != &src)
     {
         std::cout << "A new animal got created after a template" << std::endl;
-        this->setType(template.getType());
+        this->setType(src._type);
     }
     return *this;
 }
@@ -41,7 +41,7 @@ str     Animal::getType()
     return this->_type;
 }
 
-void    makeSound() const
+void    Animal::makeSound() const
 {
     std::cout << "Cronenbergian Abomination: ...slrrr..." << std::endl;
 }

@@ -10,7 +10,7 @@ class Cat : public Animal
         Cat(Cat const &src);
         ~Cat();
 
-        Cat &   operator=(Cat const &template)
+        Cat &   operator=(Cat const &src);
 
         void    makeSound() const;
     private:

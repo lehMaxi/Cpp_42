@@ -14,7 +14,7 @@ class Animal
         Animal(Animal const &src);
         ~Animal();
 
-        Animal &operator=(Animal const &template);
+        Animal &operator=(Animal const &src);
 
         void    setType(str newType);
         str     getType();

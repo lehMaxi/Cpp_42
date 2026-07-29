@@ -1,4 +1,4 @@
-#include "Cat.hpp"
+#include "..\includes\Cat.hpp"
 
 Cat::Cat()
 {
@@ -17,17 +17,17 @@ Cat::~Cat()
     std::cout << "And here I thought there should be 8 lives left..." << std::endl;
 }
 
-Cat Cat:: operator=(Cat &template)
+Cat& Cat::operator=(Cat const &src)
 {
-    if (*this != template)
+    if (this != &src)
     {
         std::cout << "Looks just like her mommy." << std::endl;
-        this->setType(template.getType());
+        this->setType(src._type);
     }
-return this;
+return *this;
 }
 
-void Cat::makeSound()
+void Cat::makeSound() const
 {
     std::cout << "I guess mewmewmew would be appropriate, yes?" << std::endl;
 }

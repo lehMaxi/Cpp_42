@@ -1,4 +1,4 @@
-#include "WrongAnimal.hpp"
+#include "..\includes\WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal(str newType) : _type(newType)
 {
@@ -21,12 +21,12 @@ WrongAnimal::~WrongAnimal()
     std::cout << "Rejoice, the creature is finally gone!" << std::endl;
 }
 
-WrongAnimal& WrongAnimal::operator=(WrongAnimal const &template)
+WrongAnimal& WrongAnimal::operator=(WrongAnimal const &src)
 {
-    if (this != &template)
+    if (this != &src)
     {
         std::cout << "There... ...are MORE of these?!" << std::endl;
-        this->setType(template.getType());
+        this->setType(src._type);
     }
     return *this;
 }

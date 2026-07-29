@@ -14,7 +14,7 @@ class WrongAnimal
         WrongAnimal(WrongAnimal const &src);
         ~WrongAnimal();
 
-        WrongAnimal &operator=(WrongAnimal const &template);
+        WrongAnimal &operator=(WrongAnimal const &src);
 
         void    setType(str newType);
         str     getType();
