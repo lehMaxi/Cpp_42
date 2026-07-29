@@ -2,6 +2,7 @@
 #define FIXED_H
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -29,13 +30,13 @@ class Fixed
 
         int     getRawBits(void) const;
         void    setRawBits(int const raw);
-        float   fixToFloat() const;
-        int     fixToInt() const;
+        float   toFloat() const;
+        int     toInt() const;
 
-        static Fixed &          min(Fixed &a, Fixed &b);
-        static Fixed const &    min(Fixed const &a, Fixed const &b);
-        static Fixed &          max(Fixed &a, Fixed &b);
-        static Fixed const &    max(Fixed const &a, Fixed const &b);
+        static Fixed        &min(Fixed &a, Fixed &b);
+        static Fixed const  &min(Fixed const &a, Fixed const &b);
+        static Fixed        &max(Fixed &a, Fixed &b);
+        static Fixed const  &max(Fixed const &a, Fixed const &b);
     private:
         int              value;
         static const int bits = 8;

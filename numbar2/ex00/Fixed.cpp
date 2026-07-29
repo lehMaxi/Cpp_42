@@ -1,6 +1,6 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed()
+Fixed::Fixed() : value(0)
 {
     std::cout << "Constructing..." << std::endl;
 }
@@ -8,6 +8,7 @@ Fixed::Fixed()
 Fixed::Fixed(Fixed const &src)
 {
     std::cout << "Copying..." << std::endl;
+    *this = src;
 }
 
 Fixed::~Fixed()

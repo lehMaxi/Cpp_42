@@ -1,0 +1,20 @@
+SRC =	Fixed.cpp \
+		main.cpp
+NAME = fixed1 
+OBJ = $(SRC: .cpp=.o)
+CC = c++ -Wall -Wextra -Werror -std=c++98
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	rm -rf $(NAME)
+
+fclean: clean
+	rm -rf $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re

@@ -2,6 +2,7 @@
 #define FIXED_H
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -14,8 +15,8 @@ class Fixed
         Fixed&  operator=(Fixed const &rSym);
         int     getRawBits(void) const;
         void    setRawBits(int const raw);
-        float   fixToFloat() const;
-        int     fixToInt() const;
+        float   toFloat() const;
+        int     toInt() const;
     private:
         int              value;
         static const int bits = 8;

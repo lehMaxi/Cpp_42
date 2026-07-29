@@ -2,7 +2,7 @@
 
 
 
-Fixed::Fixed()
+Fixed::Fixed() : value(0)
 {
     std::cout << "Constructing..." << std::endl;
 }
@@ -10,6 +10,7 @@ Fixed::Fixed()
 Fixed::Fixed(Fixed const &src)
 {
     std::cout << "Copying..." << std::endl;
+    *this = src;
 }
 
 Fixed::Fixed(const int i)
@@ -49,18 +50,18 @@ void    Fixed::setRawBits(int const raw)
     this->value = raw;
 }
 
-float   Fixed::fixToFloat() const
+float   Fixed::toFloat() const
 {
     return (float)this->value / (float)(1 << bits);
 }
 
-int     Fixed::fixToInt() const
+int     Fixed::toInt() const
 {
     return (int)this->value >> bits;
 }
 
 std::ostream&   operator<<(std::ostream& o, Fixed const &rSym)
 {
-    o << rSym.fixToFloat();
+    o << rSym.toFloat();
     return o;
 }

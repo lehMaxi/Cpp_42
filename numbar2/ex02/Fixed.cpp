@@ -2,14 +2,15 @@
 
 
 
-Fixed::Fixed()
+Fixed::Fixed() : value(0)
 {
-    std::cout << "Constructing..." << std::endl;
+   std::cout << "Constructing..." << std::endl;
 }
 
 Fixed::Fixed(Fixed const &src)
 {
     std::cout << "Copying..." << std::endl;
+    *this = src;
 }
 
 Fixed::Fixed(const int i)
@@ -39,22 +40,22 @@ Fixed& Fixed::operator=(Fixed const &rSym)
 
 Fixed    Fixed::operator+(Fixed const &rSym) const
 {
-    return (this->fixToFloat() + rSym.fixToFloat());
+    return (this->toFloat() + rSym.toFloat());
 }
 
 Fixed    Fixed::operator-(Fixed const &rSym) const
 {
-    return (this->fixToFloat() - rSym.fixToFloat());
+    return (this->toFloat() - rSym.toFloat());
 }
 
 Fixed    Fixed::operator*(Fixed const &rSym) const
 {
-    return (this->fixToFloat() * rSym.fixToFloat());
+    return (this->toFloat() * rSym.toFloat());
 }
 
 Fixed    Fixed::operator/(Fixed const &rSym) const
 {
-    return (this->fixToFloat() / rSym.fixToFloat());
+    return (this->toFloat() / rSym.toFloat());
 }
 
 Fixed&  Fixed::operator++()
@@ -79,7 +80,7 @@ Fixed&  Fixed::operator--()
 Fixed   Fixed::operator--(int)
 {
     Fixed   tmp(*this);
-    operator--();
+    this->value--;
     return tmp;
 }
 
@@ -127,7 +128,7 @@ bool    Fixed::operator>(Fixed const &rSym) const
 
 int     Fixed::getRawBits() const
 {
-    std::cout << "Bits... ...we like them raw here" << std::endl;
+  std::cout << "Bits... ...we like them raw here" << std::endl;
     return this->value;
 }
 
@@ -137,18 +138,46 @@ void    Fixed::setRawBits(int const raw)
     this->value = raw;
 }
 
-float   Fixed::fixToFloat() const
+float   Fixed::toFloat() const
 {
     return (float)this->value / (float)(1 << bits);
 }
 
-int     Fixed::fixToInt() const
+int     Fixed::toInt() const
 {
     return (int)this->value >> bits;
 }
 
+Fixed &Fixed::min(Fixed &a, Fixed &b)
+{
+    if (a < b)
+        return a;
+    return b;
+}
+
+const Fixed &Fixed::min(Fixed const &a, Fixed const &b)
+{
+    if (a < b)
+        return a;
+    return b;
+}
+
+Fixed &Fixed::max(Fixed &a, Fixed &b)
+{
+    if (a > b)
+        return a;
+    return b;
+}
+
+const Fixed &Fixed::max(Fixed const &a, Fixed const &b)
+{
+    if (a > b)
+        return a;
+    return b;
+}
+
 std::ostream&   operator<<(std::ostream& o, Fixed const &rSym)
 {
-    o << rSym.fixToFloat();
+    o << rSym.toFloat();
     return o;
 }
