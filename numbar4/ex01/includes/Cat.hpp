@@ -2,7 +2,6 @@
 #define CAT_H
 
 #include "Animal.hpp"
-#include "Brain.hpp"
 
 class Cat : public Animal
 {
@@ -14,10 +13,7 @@ class Cat : public Animal
         Cat &   operator=(Cat const &src);
 
         void    makeSound() const;
-        const Brain& getBrain() const;
-    private:
-        Brain   *_brain;
-        str     _type;
+        
 };
 
 #endif

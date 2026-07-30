@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "Brain.hpp"
 
 typedef std::string str;
 
@@ -12,15 +13,17 @@ class Animal
         Animal(str newType);
         Animal();
         Animal(Animal const &src);
-        ~Animal();
+        virtual ~Animal();
 
         Animal &operator=(Animal const &src);
 
         void    setType(str newType);
-        str     getType();
+        str     getType() const;
 
         virtual void    makeSound() const;
+        Brain&   getBrain() const;
     protected:
+        Brain *_brain;
         str _type;
 };
 

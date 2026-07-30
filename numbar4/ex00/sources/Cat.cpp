@@ -1,15 +1,15 @@
-#include "..\includes\Cat.hpp"
+#include "../includes/Cat.hpp"
 
 Cat::Cat()
 {
     std::cout << "Look at the new cute kitty" << std::endl;
-    _type = "Cat";
+    this->setType("Cat");
 }
 
 Cat::Cat(Cat const &src)
 {
     std::cout << "A freshly baked kitty" << std::endl;
-    _type = src._type;
+    this->setType(src._type);
 }
 
 Cat::~Cat()

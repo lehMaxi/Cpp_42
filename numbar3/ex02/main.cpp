@@ -10,7 +10,7 @@ int main()
     scav.takeDamage(0);
     scav.attack("Clappy");
     clap.takeDamage(20);
-    scav.beRepaired(10);
+    scav.beRepaired(5);
     scav.guardGate();
     clap.attack("Scavy");
     FragTrap frag("Fraggy");
@@ -18,13 +18,13 @@ int main()
     scav.takeDamage(30);
     scav.attack("Fraggy");
     frag.takeDamage(20);
-    scav.beRepaired(10);
+    scav.beRepaired(5);
     frag.attack("Scavy");
     frag.attack("Scavy");
     scav.takeDamage(60);
     scav.attack("Fraggy");
     frag.takeDamage(20);
-    scav.beRepaired(10);
+    scav.beRepaired(5);
     frag.attack("Scavy");
     scav.takeDamage(30);
     frag.highFivesGuys();

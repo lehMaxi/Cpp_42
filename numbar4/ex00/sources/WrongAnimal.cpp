@@ -1,4 +1,4 @@
-#include "..\includes\WrongAnimal.hpp"
+#include "../includes/WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal(str newType) : _type(newType)
 {

@@ -1,8 +1,9 @@
-#include "..\includes\WrongCat.hpp"
+#include "../includes/WrongCat.hpp"
 
-WrongCat:: WrongCat() : _type("Cat")
+WrongCat:: WrongCat()
 {
     std::cout << "Panic! The creature broke lose! It's a cat?" << std::endl;
+    _type = "WrongCat";
 }
 
 WrongCat::WrongCat(WrongCat const &src)

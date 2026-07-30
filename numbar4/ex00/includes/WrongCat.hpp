@@ -1,5 +1,5 @@
-#ifndef CAT_H
-#define CAT_H
+#ifndef WRONGCAT_H
+#define WRONGCAT_H
 
 #include "WrongAnimal.hpp"
 
@@ -13,8 +13,6 @@ class WrongCat : public WrongAnimal
         WrongCat &   operator=(WrongCat const &src);
 
         void    makeSound() const;
-    private:
-        str _type;
 };
 
 #endif

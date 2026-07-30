@@ -1,8 +1,8 @@
-SRC =	.sources/Animal.cpp \
-		.sources/Cat.cpp \
-		.sources/Dog.cpp \
-		.sources/Brain.cpp \
-		.sources/main.cpp
+SRC =	./sources/Animal.cpp \
+		./sources/Cat.cpp \
+		./sources/Dog.cpp \
+		./sources/Brain.cpp \
+		./sources/main.cpp
 NAME = thoughtexperiment
 OBJ = $(SRC: .cpp=.o)
 CC = c++ -Wall -Wextra -Werror -std=c++98
@@ -13,7 +13,7 @@ $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(NAME)
 
 fclean: clean
 	rm -rf $(NAME)

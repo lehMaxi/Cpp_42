@@ -12,7 +12,7 @@ class Animal
         Animal(str newType);
         Animal();
         Animal(Animal const &src);
-        ~Animal();
+        virtual ~Animal();
 
         Animal &operator=(Animal const &src);
 

@@ -14,10 +14,10 @@ class Dog : public Animal
         Dog &   operator=(Dog const &src);
 
         void    makeSound() const;
-        const Brain& getBrain() const;
+        Brain&   getBrain() const;
+
     private:
-        Brain* _brain;
-        str _type;
+        Brain *_brain;
 };
 
 #endif

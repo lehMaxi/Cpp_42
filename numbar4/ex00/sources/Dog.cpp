@@ -1,15 +1,15 @@
-#include "..\includes\Dog.hpp"
+#include "../includes/Dog.hpp"
 
 Dog::Dog()
 {
     std::cout << "Look at the new cute puppy" << std::endl;
-    _type = "Dog";
+    this->setType("Dog");
 }
 
 Dog::Dog(Dog const &src)
 {
 std::cout << "A freshly baked puppy" << std::endl;
-    _type = src._type;
+    this->setType(src._type);
 }
 
 Dog::~Dog()
