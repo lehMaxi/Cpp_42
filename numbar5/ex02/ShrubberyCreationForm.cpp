@@ -6,24 +6,20 @@
 /*   By: mlehmann <mlehmann@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 13:10:54 by mlehmann          #+#    #+#             */
-/*   Updated: 2026/08/17 14:40:35 by mlehmann         ###   ########.fr       */
+/*   Updated: 2026/08/18 13:52:01 by mlehmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(str target)
+ShrubberyCreationForm::ShrubberyCreationForm(str target): AForm("ShrubberyCreationForm", 145, 137)
 {
-	_name = "ShrubberyCreationForm";
-	_toSign = 145;
-	_toExecute = 137;
-	_signed = false;
 	_target = target;
 	std::cout << "create a shrubbery" << std::endl;
 }
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src): AForm(src)
 {
-	*this = src;
+	_target = src._target;
 }
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
@@ -31,7 +27,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 ShrubberyCreationForm	& ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rSym)
 {
-	if (*this != rSym)
+	if (this != &rSym)
 	{
 		_target = rSym._target;
 		_name = rSym._name;
@@ -39,7 +35,7 @@ ShrubberyCreationForm	& ShrubberyCreationForm::operator=(ShrubberyCreationForm c
 		_toSign = rSym._toSign;
 		_toExecute = rSym._toExecute;
 	}
-	return *this
+	return *this;
 }
 
 void	ShrubberyCreationForm::call()
@@ -49,5 +45,15 @@ void	ShrubberyCreationForm::call()
 
 void	ShrubberyCreationForm::createShrubbery(str target)
 {
-	std::cout << target << std::endl;
+	str				outfile = target + "_shrubbery";
+	std::ofstream 	output;
+	output.open(outfile.c_str);
+	output << "     ~~    ~~" << std::endl;
+	output << "   { ~ }  { ~}" << std::endl;
+	output << "  { ~   }{ ~ }" << std::endl;
+	output << "   {   \\ / }" << std::endl;
+	output << "    ~~~~||~~" << std::endl;
+	output << "        ||" << std::endl;
+	output << "       //\\" << std::endl;
+	output << "      / ||\\" << std::endl;
 }

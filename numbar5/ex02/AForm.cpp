@@ -6,7 +6,7 @@
 /*   By: mlehmann <mlehmann@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 15:13:56 by mlehmann          #+#    #+#             */
-/*   Updated: 2026/08/17 14:36:01 by mlehmann         ###   ########.fr       */
+/*   Updated: 2026/08/18 13:06:22 by mlehmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,8 +127,8 @@ const char *	AForm::GradeToLowException::what() const throw()
 std::ostream & operator<<(std::ostream & o, AForm const &rSym)
 {
 	if (rSym.getSigned() == true)
-		o << "The form " << rSym.getName() << " requires grade " << rSym.getToSign() << " to get signed and grade " << rSym.getToExecute() << " to execute and is currently signed.";
+		o << "The " << rSym.getName() << " requires grade " << rSym.getToSign() << " to get signed and grade " << rSym.getToExecute() << " to execute and is currently signed.";
 	else
-		o << "The form " << rSym.getName() << " requires grade " << rSym.getToSign() << " to get signed and grade " << rSym.getToExecute() << " to execute and is currently unsigned.";
+		o << "The " << rSym.getName() << " requires grade " << rSym.getToSign() << " to get signed and grade " << rSym.getToExecute() << " to execute and is currently unsigned.";
 	return o;
 }
