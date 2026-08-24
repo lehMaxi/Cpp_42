@@ -10,4 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ITER_H
+#define ITER_H
 
+#include <iostream>
+#include <string>
+
+typedef std::string str;
+
+template<typename T>
+void  iter(T *adress, int length, void (*function)(T& var));
+
+template<typename T>
+void  printValue(T val);
+
+#endif
