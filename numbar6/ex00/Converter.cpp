@@ -24,8 +24,10 @@ static void isIntPrint(std::string param)
 {
   int n = atoi(param.c_str());
   
-  if ( n < 32 || n > 126)
-    std::cout << "char: " << "not possible to display" << std::endl;
+  if (n < 0 || n > 127)
+    std::cout << "char: " << "impossible" << std::endl;
+  else if ( n < 32 || n > 126)
+    std::cout << "char: " << "not printable" << std::endl;
   else
     std::cout << "char: " << static_cast<char>(n) << std::endl;
   std::cout << "int: " << n << std::endl;
@@ -36,9 +38,11 @@ static void isIntPrint(std::string param)
 static void isFloatPrint(std::string param)
 {
   float n = atof(param.c_str());
-  
-  if ( n < 32 || n > 126)
-    std::cout << "char: " << "not possible to display" << std::endl;
+
+  if (n < 0 || n > 127)
+    std::cout << "char: " << "impossible" << std::endl;
+  else if ( n < 32 || n > 126)
+    std::cout << "char: " << "not printable" << std::endl;
   else
     std::cout << "char: " << static_cast<char>(n) << std::endl;
   std::cout << "int: " << static_cast<int>(n) << std::endl;
@@ -50,11 +54,37 @@ static void isDoublePrint(std::string param)
 {
   double n = atof(param.c_str());
   
-  if ( n < 32 || n > 126)
-    std::cout << "char: " << "not possible to display" << std::endl;
+  if (n < 0 || n > 127)
+    std::cout << "char: " << "impossible" << std::endl;
+  else if ( n < 32 || n > 126)
+    std::cout << "char: " << "not printable" << std::endl;
   else
     std::cout << "char: " << static_cast<char>(n) << std::endl;
   std::cout << "int: " << static_cast<int>(n) << std::endl;
   std::cout << "float: " << std::fixed << std::setprecision(2) << static_cast<float>(n) << "f" << std::endl;
   std::cout << "double: " << std::fixed << std::setprecision(2) << n << std::endl;
+}
+
+static void isNanPrint()
+{
+  std::cout << "char: impossible" << std::endl;
+  std::cout << "int: impossible" << std::endl;
+  std::cout << "float: nanf" << std::endl;
+  std::cout << "double: nan" << std::endl;
+}
+
+static void isInfPosPrint()
+{
+  std::cout << "char: impossible" << std::endl;
+  std::cout << "int: impossible" << std::endl;
+  std::cout << "float: +inff" << std::endl;
+  std::cout << "double: +inf" << std::endl;
+}
+
+static void isInfNegPrint()
+{
+  std::cout << "char: impossible" << std::endl;
+  std::cout << "int: impossible" << std::endl;
+  std::cout << "float: -inff" << std::endl;
+  std::cout << "double: -inf" << std::endl;
 }
