@@ -88,3 +88,36 @@ static void isInfNegPrint()
   std::cout << "float: -inff" << std::endl;
   std::cout << "double: -inf" << std::endl;
 }
+
+static void errorPrint()
+{
+  std::cout << "char: impossible" << std::endl;
+  std::cout << "int: impossible" << std::endl;
+  std::cout << "float: impossible" << std::endl;
+  std::cout << "double: impossible" << std::endl;
+}
+
+static void  sortInput(std::string input)
+{
+  if (std::isprint(input[0]) && !std::isdigit(input[0]))
+  {
+    if (input.lengt() == 1)
+      isCharPrint(input);
+    else if (input == "-inf" || input "-inff" )
+      isInfNegPrint();
+    else if (input == "+inf" || input == "+inff" )
+      isInfPosPrint();
+    else if (input == "nan" || input == "nanf" )
+      isNanPrint();
+    else
+      errorPrint();
+  }
+  else if (input[input.length() - 1] == 'f')
+  {
+    long unsingned int  i = 0;
+    while (i < input.length() - 1 && (std::isdigit(input[i] || input[i] == '.'))
+      i++;
+    if (i == input.length() - 1)
+      isFloatPrint(input);
+  }
+}
