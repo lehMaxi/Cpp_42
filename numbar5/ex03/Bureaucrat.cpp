@@ -6,7 +6,7 @@
 /*   By: mlehmann <mlehmann@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 16:13:21 by mlehmann          #+#    #+#             */
-/*   Updated: 2026/08/22 11:38:04 by mlehmann         ###   ########.fr       */
+/*   Updated: 2026/08/26 15:11:30 by mlehmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,34 +86,34 @@ void	Bureaucrat::demote()
 		this->_grade++;
 }
 
-void	Bureaucrat::signForm(AForm &papers)
+void	Bureaucrat::signForm(AForm *papers)
 {
 	try
 	{
-		papers.beSigned(*this);
+		papers->beSigned(*this);
 	}
 	catch (std::exception & e)
 	{
-		std::cout << _name << " is forbidden to sign " << papers.getName() << " due to their lack of status, at least a grade of " << papers.getToSign() << " would be needed." << std::endl;
+		std::cout << _name << " is forbidden to sign " << papers->getName() << " due to their lack of status, at least a grade of " << papers->getToSign() << " would be needed." << std::endl;
 		return;
 	}
-	std::cout << _name << " signed " << papers.getName() << std::endl;
+	std::cout << _name << " signed " << papers->getName() << std::endl;
 }
 
-void	Bureaucrat::executeForm(AForm &orders)
+void	Bureaucrat::executeForm(AForm *orders)
 {
-	if(orders.getSigned() == false)
+	if(orders->getSigned() == false)
 	{
-		std::cout << _name << "refuses to execute the unsigned " << orders.getName() << "." << std::endl;
+		std::cout << _name << "refuses to execute the unsigned " << orders->getName() << "." << std::endl;
 		return;
 	}
 	try
 	{
-		orders.execute(*this);
+		orders->execute(*this);
 	}
 	catch (std::exception & e)
 	{
-		std::cout << _name << " is forbidden to execute " << orders.getName() << " due to their lack of status, at least a grade of " << orders.getToExecute() << " would be needed." << std::endl;
+		std::cout << _name << " is forbidden to execute " << orders->getName() << " due to their lack of status, at least a grade of " << orders->getToExecute() << " would be needed." << std::endl;
 		return;
 	}
 }

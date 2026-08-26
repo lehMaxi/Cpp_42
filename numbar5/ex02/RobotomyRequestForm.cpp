@@ -6,7 +6,7 @@
 /*   By: mlehmann <mlehmann@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 13:32:10 by mlehmann          #+#    #+#             */
-/*   Updated: 2026/08/22 11:48:42 by mlehmann         ###   ########.fr       */
+/*   Updated: 2026/08/26 15:20:32 by mlehmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,11 @@ void	RobotomyRequestForm::call()
 
 void	RobotomyRequestForm::robotomize(str target)
 {
-	std::default_random_engine	generator;
-	std::uniform_int_distribution<int>	distribution(1,100);
-	int	chance = distribution(generator);
-
 	std::cout << "whirr... ...whirr whirr..." << std::endl;
 	std::cout << "whirr whirr... ...screeeeeEEEEEE" << std::endl;
-	if (chance < 50)
+	srand(time(NULL));
+	int chance = rand() % 2;
+	if (chance)
 	{
 		std::cout << "The robotomy was unsuccessful..." << std::endl;
 		std::cout << "Maybe try it again?" << std::endl;

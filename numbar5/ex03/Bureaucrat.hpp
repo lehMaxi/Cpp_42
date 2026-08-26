@@ -6,7 +6,7 @@
 /*   By: mlehmann <mlehmann@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 15:52:25 by mlehmann          #+#    #+#             */
-/*   Updated: 2026/08/22 11:39:11 by mlehmann         ###   ########.fr       */
+/*   Updated: 2026/08/26 15:12:13 by mlehmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ class Bureaucrat
 
 		void	promote();
 		void	demote();
-		void	signForm(AForm &papers);
-		void	executeForm(AForm &orders);
+		void	signForm(AForm *papers);
+		void	executeForm(AForm *orders);
 
 		class GradeToHighException : public std::exception
 		{
