@@ -36,7 +36,7 @@ class Span
 		Span & operator=(Span const &src);
 
 		void	addNumber(int n);
-		void	bigAdd(int n);
+		void	addMultiple(int n);
 		int		shortestSpan();
 		int		longestSpan() const;
 
