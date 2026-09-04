@@ -10,4 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Span.hpp"
+
+Span::Span() : _maxSize(0), _size(0) {}
+
+Span::Span(unsigned int N) : _maxSize(N), _size(0) {}
+
+Span::Span(Span const &src)
+{
+	_array = src._array;
+	_maxSize = src._maxSize;
+	_size = src._size;
+}
+
+Span::~Span()
+{
+}
 
