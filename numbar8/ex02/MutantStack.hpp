@@ -13,8 +13,43 @@
 #ifndef MUTANTSTACK_H
 #define MUTANTSTACK_H
 
-class MutantStack
+#include <iostream>
+#include <string>
+#include <stack>
+#include <list>
+
+template<class T>
+class MutantStack : public std::stack<T>
 {
+	public:
+		MutantStack();
+		MutantStack(MutantStack const &src);
+		~MutantStack();
+
+		MutantStack<T> &	operator=(MutantStack<T> const &src);
+
+		typedef typename std::stack<T>::container_type::iterator	iterator;
+		iterator			begin();
+		iterator			end();
+	private:
+};
+
+template<typename T>
+MutantStack<T>::MutantStack() {}
+
+template<typename T>
+MutantStack<T>::MutantStack(MutantStack<T> const &src) : std::stack<T>(src) {}
+
+template<typename T>
+MutantStack<T>::~MutantStack() {}
+
+template<typename T>
+MutantStack<T> &	MutantStack<T>::operator=(MutantStack<T> const &src)
+{
+	if(this != &src)
+	{
+		
+	}
 }
 
 #endif
