@@ -10,4 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef MUTANTSTACK_H
+#define MUTANTSTACK_H
 
+class MutantStack
+{
+}
+
+#endif
