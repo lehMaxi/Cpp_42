@@ -6,7 +6,7 @@
 /*   By: mlehmann <mlehmann@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 14:03:41 by mlehmann          #+#    #+#             */
-/*   Updated: 2026/09/03 14:03:42 by mlehmann         ###   ########.fr       */
+/*   Updated: 2026/09/15 12:45:27 by mlehmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,21 @@ MutantStack<T> &	MutantStack<T>::operator=(MutantStack<T> const &src)
 {
 	if(this != &src)
 	{
-		
+		std::stack<T>::operator=(src);
 	}
+	return *this;
+}
+
+template<typename T>
+typename MutantStack<T>::itterator MutantStack<T>::begin()
+{
+	return std::stack<T>::c.begin();
+}
+
+template<typename T>
+typename MutantStack<T>::itterator MutantStack<T>::end()
+{
+	return std::stack<T>::c.end();
 }
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mlehmann <mlehmann@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 13:53:00 by mlehmann          #+#    #+#             */
-/*   Updated: 2026/09/03 13:53:06 by mlehmann         ###   ########.fr       */
+/*   Updated: 2026/09/15 13:27:50 by mlehmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 #define EASYFIND_H
 
 #include <iostream>
-#include <string>
-#include <algorythm>
+#include <algorithm>
+#include <vector>
 #include <list>
 #include <stdexcept>
-
-typedef std::string str;
 
 class NoValueException : public std::exception
 {
@@ -28,6 +26,12 @@ class NoValueException : public std::exception
 };
 
 template<typename T>
-int	easyfind(T const & array, int val);
+int	easyfind(T array, int val)
+{
+	typename T::iterator elem = std::find(array.begin(), array.end(), val);
+	if (elem == array.end())
+		return -1;
+	return *elem;
+}
 
 #endif
