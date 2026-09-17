@@ -10,4 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "BitcoinExchange.hpp"
 
+BitcoinExchange::BitcoinExchage() {}
+
+BitcoinExchange::BitcoinExchage()
+{
+	std::ifstream	data;
+	int				i = 0;
+
+	data.open("data.csv", std::ifstream::in);
+	_parseData(data);
+	_inputSize = _getInputSize(file) - 1;
+	_input = new int[_inputSize];
+}
