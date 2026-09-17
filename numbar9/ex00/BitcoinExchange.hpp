@@ -45,4 +45,20 @@ class	BitcoinExchange
 	
 	private:
 		std::map<str, float>	_map;
-}
+		int						_inputSize;
+		int *					_input;
+		str const				_inputPath;
+
+		int		_getInputSize(std::ifstream & file) const;
+		void	_parseData(std::ifstream & file);
+		void 	_parseInput(std::ifstream & file);
+		bool	_isDate(str line);
+		bool	_isPositive(str line);
+		bool	_isTooLarge(str line);
+		void	_output(std::ifstram & file);
+		void	_nearestDate(str & key);
+};
+
+str		trim(const str &str);
+
+#endif
