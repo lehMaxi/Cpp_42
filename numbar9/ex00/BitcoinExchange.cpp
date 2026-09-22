@@ -74,5 +74,29 @@ int		BitcoinExchange::_getInputSize(std::ifstream & file) const
 
 void	BitcoinExchange::_parseDate(std::ifstream & file)
 {
+	str		line;
+	str		field;
+	str		key;
+	str		value;
+	float	f;
+	int		i = 1;
 	
+	while (getline(file, line))
+	{
+		std::isstringstream	s(line);
+		while (getline(s, field, ','))
+		{
+			if (i == 1)
+				key = field;
+			if (i == 2)
+			{
+				value = field;
+				f = atof(field.c_str());
+				_map.insert(std::pair<str, float>(key, f));
+			}
+			i++;
+		}
+		i = 1;
+	}
+	file.colse();
 }
