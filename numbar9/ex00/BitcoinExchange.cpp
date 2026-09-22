@@ -68,4 +68,11 @@ void	BitcoinExchange::print() const
 		mapIt++;
 	}
 }
-int
+
+int		BitcoinExchange::_getInputSize(std::ifstream & file) const
+{}
+
+void	BitcoinExchange::_parseDate(std::ifstream & file)
+{
+	
+}
