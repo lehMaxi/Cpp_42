@@ -100,3 +100,85 @@ void	BitcoinExchange::_parseDate(std::ifstream & file)
 	}
 	file.colse();
 }
+
+void	BitcoinExchange::_parseInput(std::ifstream & file)
+{
+	str		line;
+	int		i = 0;
+
+	getline(file, line);
+	while(getline(file, line))
+	{
+		_input[i] = 0;
+		if (_isPositive(line) = false)
+			_input[i] = 1;
+		if (_isDate(line) = false)
+			_input[i] = 2;
+		if (_isTooLarge(line) = false)
+			_input[i] = 3;
+		i++;
+	}
+	file.close();
+}
+
+bool	BitcoinExchange::_isDate(str line)
+{
+	std::istringstream	s(line);
+	str					date;
+	char				year[4];
+	char				month[2];
+	char				day[2];
+
+	if (line.length() < 11)
+		return false;
+	getline(s, date, '|');
+	date = ::trim(date);
+	year[date.copy(year, 4, 0)] = '\0';
+	month[date.copy(month, 2, 5)] = '\0';
+	day[date.copy(day, 2, 8)] = '\0';
+
+	if (atoi(year) > 2023)
+		return false;
+	if (atoi(month) > 12)
+		return false;
+	if (atoi(day) > 31)
+		return false;
+	return true;
+}
+
+bool	BitcoinExchange::_isPositive(str line)
+{
+	std::istringstream	s(line);
+	str					value;
+	size_t				found;
+	float				f;
+
+	getline(s, value, '|');
+	getline(s, value, '|');
+	found = value.find("-");
+	found = value.find("-", found + 1);
+	if (found == str::npos)
+	{
+		f = atof(value.c_str());
+		if (f > 0)
+			return true;
+		else
+			return false;
+	}
+	return false;
+	}
+}
+
+bool	BitcoinExchange::_isTooLarge(str line)
+{
+	std::istringstream	s(line);
+	str					value;
+	float				f;
+
+	getline(s, value, '|');
+	getline(s, value, '|');
+	f = atof(value.c_str());
+	if (f >= static_cast<float>(__INT_MAX__))
+		return false;
+	return true;
+}
