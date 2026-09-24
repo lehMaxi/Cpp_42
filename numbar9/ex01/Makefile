@@ -1,4 +1,5 @@
-SRC =	main.cpp
+SRC =	RPN.cpp\
+		main.cpp
 NAME = RNP
 OBJ = $(SRC: .cpp=.o)
 CC = c++ -Wall -Wextra -Werror -std=c++98
