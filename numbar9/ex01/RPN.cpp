@@ -30,5 +30,17 @@ RPN::RPN(char *input)
 			_stack.push(input[i] - '0');
 		}
 		else if (input[i] == '+' || input[i] == '-' || input[i] == '/' || input[i] == '*')
+		{
+			first = _stack.top();
+			_stack.pop();
+			second = _stack.top();
+			_stack.pop();
+			switch(input[i])
+			{
+				case '+':
+					result = first + second;
+					break;
+			}
+		}
 	}
 }
