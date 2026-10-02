@@ -6,7 +6,7 @@
 /*   By: mlehmann <mlehmann@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 14:09:17 by mlehmann          #+#    #+#             */
-/*   Updated: 2026/09/03 14:09:44 by mlehmann         ###   ########.fr       */
+/*   Updated: 2026/10/02 12:08:43 by mlehmann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class RPN
 
 		RPN &	operator=(RPN const &src);
 	private:
+		void	checkinput(char *input);
 		std::stack<int> _stack;
 };
 

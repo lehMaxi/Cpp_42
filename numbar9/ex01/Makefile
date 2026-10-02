@@ -1,6 +1,6 @@
 SRC =	RPN.cpp\
 		main.cpp
-NAME = RNP
+NAME = RPN
 OBJ = $(SRC: .cpp=.o)
 CC = c++ -Wall -Wextra -Werror -std=c++98
 
